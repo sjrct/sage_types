@@ -66,10 +66,10 @@
  * Returns the value of DEST, the result of the malloc call
  */
 #define s_alloc(DEST, TYPE) \
-    ((( \
+    ((TYPE *) ((( \
         (DEST = (TYPE *)malloc(sizeof(TYPE))) && \
         ( (_SAGE_GET_MARKER(DEST) = #TYPE) ) \
-    ) & 0) + DEST)
+    ) & 0) + DEST))
 
 /**
  * Use "s_cast(foo, bar_t)" instead of "(bar_t *) foo"
