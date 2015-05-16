@@ -85,7 +85,6 @@
 
 #else /* NO_SAGE_TYPES */
 
-#define SAGE_TYPE_DECLARE(_)
 #define SAGE_TYPE
 
 #define s_alloc(DEST, TYPE) \
