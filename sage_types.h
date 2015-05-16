@@ -80,7 +80,7 @@
     ( \
         ( strcmp(_SAGE_GET_MARKER(FROM), #TYPE) ) \
         ? NULL \
-        : ( (TYPE *) FROM ) \
+        : ( (TYPE *) (FROM) ) \
     )
 
 #else /* NO_SAGE_TYPES */
@@ -91,7 +91,7 @@
     (DEST = malloc(sizeof(TYPE)))
 
 #define s_cast(FROM, TYPE) \
-    ( (TYPE *) FROM )
+    ( (TYPE *) (FROM) )
 
 #endif /* NO_SAGE_TYPES */
 
