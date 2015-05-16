@@ -91,7 +91,7 @@
 #define s_alloc(DEST, TYPE) \
     ( (DEST = malloc(sizeof(TYPE))) || 1 )
 
-#define s_cast(TYPE, FROM) \
+#define s_cast(FROM, TYPE) \
     ( (TYPE *) FROM )
 
 #endif /* NO_SAGE_TYPES */
