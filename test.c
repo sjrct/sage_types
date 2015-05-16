@@ -29,15 +29,18 @@
 #define MAX 100
 
 struct foo {
-    SAGE_TYPE;
+    SAGE_TYPE
+    int a;
 };
 
 struct bar {
-    SAGE_TYPE;
+    SAGE_TYPE
+    int b;
 };
 
 struct baz {
-    SAGE_TYPE;
+    SAGE_TYPE
+    int c;
 };
 
 int main() {

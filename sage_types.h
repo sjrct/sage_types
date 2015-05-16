@@ -26,7 +26,7 @@
  * Usage:
  *
  * Inside of a struct for which you want to use safe casting, place the string
- * "SAGE_TYPE;". Then, whenever you allocate an instance of that struct use the
+ * "SAGE_TYPE". Then, whenever you allocate an instance of that struct use the
  * "s_alloc" macro, and whenever you cast to that struct use the "s_cast" macro,
  * being sure to check the return value.
  *
@@ -58,7 +58,7 @@
  * Place inside your struct's declaration.
  */
 #define SAGE_TYPE \
-    const char *_sage_marker
+    const char *_sage_marker;
 
 /**
  * Use "s_alloc(foo, bar_t)" instead of "foo = malloc(sizeof(bar_t))"
