@@ -72,7 +72,7 @@
     ) & 0) + DEST)
 
 /**
- * Use "s_cast(bar_t, foo)" instead of "(bar_t *) foo"
+ * Use "s_cast(foo, bar_t)" instead of "(bar_t *) foo"
  *
  * Returns casted pointer if successful, NULL if not the right type
  */
