@@ -45,14 +45,18 @@ struct baz {
 
 int main() {
     int i;
-    struct foo *foos[MAX];
-    struct bar *bars[MAX];
-    struct baz *bazs[MAX];
+    struct foo *foos[MAX], *tmp_foo;
+    struct bar *bars[MAX], *tmp_bar;
+    struct baz *bazs[MAX], *tmp_baz;
 
     for (i = 0; i < MAX; i++) {
-        assert(s_alloc(foos[i], struct foo));
-        assert(s_alloc(bars[i], struct bar));
-        assert(s_alloc(bazs[i], struct baz));
+        assert(tmp_foo = s_alloc(foos[i], struct foo));
+        assert(tmp_bar = s_alloc(bars[i], struct bar));
+        assert(tmp_baz = s_alloc(bazs[i], struct baz));
+
+        assert(tmp_foo == foos[i]);
+        assert(tmp_bar == bars[i]);
+        assert(tmp_baz == bazs[i]);
     }
 
     for (i = 0; i < MAX; i++) {
