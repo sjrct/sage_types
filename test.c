@@ -50,9 +50,9 @@ int main() {
     struct baz *bazs[MAX];
 
     for (i = 0; i < MAX; i++) {
-        s_alloc(foos[i], struct foo);
-        s_alloc(bars[i], struct bar);
-        s_alloc(bazs[i], struct baz);
+        assert(s_alloc(foos[i], struct foo));
+        assert(s_alloc(bars[i], struct bar));
+        assert(s_alloc(bazs[i], struct baz));
     }
 
     for (i = 0; i < MAX; i++) {

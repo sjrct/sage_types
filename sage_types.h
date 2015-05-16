@@ -63,13 +63,13 @@
 /**
  * Use "s_alloc(foo, bar_t)" instead of "foo = malloc(sizeof(bar_t))"
  *
- * Returns "1" if successful, "0" if not. (i.e. if malloc returns NULL)
+ * Returns the value of DEST, the result of the malloc call
  */
 #define s_alloc(DEST, TYPE) \
-    ( \
+    ((( \
         (DEST = (TYPE *)malloc(sizeof(TYPE))) && \
-        ( (_SAGE_GET_MARKER(DEST) = #TYPE) || 1 ) \
-    )
+        ( (_SAGE_GET_MARKER(DEST) = #TYPE) ) \
+    ) & 0) + DEST)
 
 /**
  * Use "s_cast(bar_t, foo)" instead of "(bar_t *) foo"
@@ -89,7 +89,7 @@
 #define SAGE_TYPE
 
 #define s_alloc(DEST, TYPE) \
-    ( (DEST = malloc(sizeof(TYPE))) || 1 )
+    (DEST = malloc(sizeof(TYPE)))
 
 #define s_cast(FROM, TYPE) \
     ( (TYPE *) FROM )
